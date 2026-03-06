@@ -1,0 +1,23 @@
+export const HORSE_NAMES = [
+  'Andromeda',
+  'Milkyway',
+  'Whirlpool',
+  'Sombrero',
+  'Pinwheel',
+  'Triangulum',
+  'Centaurus',
+  'Messier',
+  'Cartwheel',
+  'Antennae',
+  'Cigar',
+  'Tadpole',
+  'Sunflower',
+  'Blackeye',
+  'Butterfly',
+  'Fireworks',
+  'Needle',
+  'Ring',
+  'Spindle',
+  'Orion',
+]
+
