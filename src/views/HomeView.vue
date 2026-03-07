@@ -11,16 +11,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="grid grid-cols-12 gap-3 h-full overflow-hidden">
-    <aside class="col-span-2 h-full overflow-hidden">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-1 h-full overflow-hidden">
+    <aside class="md:col-span-3 h-full overflow-hidden">
       <RacingHorseList />
     </aside>
 
-    <section class="col-span-5 h-full overflow-hidden">
+    <section class="md:col-span-5 h-full overflow-hidden">
       <RacingLanes />
     </section>
 
-    <aside class="col-span-5 h-full overflow-hidden">
+    <aside class="md:col-span-4 h-full overflow-hidden">
       <RacingBoard />
     </aside>
   </div>
