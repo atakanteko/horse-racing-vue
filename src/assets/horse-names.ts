@@ -20,4 +20,3 @@ export const HORSE_NAMES = [
   'Spindle',
   'Orion',
 ]
-

@@ -8,7 +8,9 @@ const horses = computed(() => store.getters['racing/getHorses'])
 
 <template>
   <div class="h-full flex flex-col overflow-hidden">
-    <h2 class="text-2xl font-bold mb-2 shrink-0 text-center bg-yellow-300">Horse List {{ `1-${horses.length}` }}</h2>
+    <h2 class="text-2xl font-bold mb-2 shrink-0 text-center bg-yellow-300">
+      Horse List {{ `1-${horses.length}` }}
+    </h2>
     <div class="flex-1 overflow-y-auto">
       <table class="w-full bg-white border border-gray-300">
         <thead class="bg-gray-300 sticky top-0">

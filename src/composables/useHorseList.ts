@@ -9,12 +9,14 @@ export const useHorseList = () => {
   const store = useStore()
 
   const generateHorseList = () => {
-    const horseList: Horse[] = shuffle(HORSE_NAMES).map((horseName): Horse => ({
-      id: new Date().valueOf().toString(),
-      name: horseName,
-      color: generateUniqueHexColor(),
-      condition: randomNumber(30, 100),
-    }))
+    const horseList: Horse[] = shuffle(HORSE_NAMES).map(
+      (horseName): Horse => ({
+        id: new Date().valueOf().toString(),
+        name: horseName,
+        color: generateUniqueHexColor(),
+        condition: randomNumber(30, 100),
+      }),
+    )
     console.log(horseList)
     store.dispatch('racing/setHorseList', horseList)
   }

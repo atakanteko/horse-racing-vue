@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import { useHorseList } from '@/composables/useHorseList'
-import {  onMounted } from 'vue'
+import { onMounted } from 'vue'
 import { RacingHorseList, RacingLanes, RacingBoard } from '@/components/racing'
-
 
 const { generateHorseList } = useHorseList()
 
 onMounted(() => {
   generateHorseList()
 })
-
 </script>
 
 <template>
@@ -19,7 +17,7 @@ onMounted(() => {
     </aside>
 
     <section class="col-span-5 h-full overflow-hidden">
-      <RacingLanes  />
+      <RacingLanes />
     </section>
 
     <aside class="col-span-5 h-full overflow-hidden">
