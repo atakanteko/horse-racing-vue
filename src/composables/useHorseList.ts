@@ -18,7 +18,6 @@ export const useHorseList = () => {
         condition: randomNumber(30, 100),
       }),
     )
-    console.log(horseList)
     store.dispatch('racing/setHorseList', horseList)
   }
 
