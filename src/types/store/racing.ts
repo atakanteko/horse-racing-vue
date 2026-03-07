@@ -1,3 +1,5 @@
+import { RACING_CONFIG } from '@/constants'
+
 type Horse = {
   id: string
   name: string
@@ -5,4 +7,12 @@ type Horse = {
   condition: number
 }
 
-export type { Horse }
+type RaceProgram = {
+  horses: {
+    lane: number
+    horse: Horse
+  }[]
+  raceLength: (typeof RACING_CONFIG.RACING_LANE_LENGTHS)[number]
+}
+
+export type { Horse, RaceProgram }
