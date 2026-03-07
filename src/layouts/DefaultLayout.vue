@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { AppHeader, AppFooter, AppMain } from '@/components/layout'
+import { AppHeader, AppMain } from '@/components/layout'
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="bg-primary h-screen flex flex-col overflow-hidden p-2 gap-6">
     <AppHeader />
     <AppMain />
-    <AppFooter />
   </div>
 </template>

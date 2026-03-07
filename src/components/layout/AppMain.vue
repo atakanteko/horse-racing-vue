@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <main class="flex-1 w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <main class="flex-1 w-full mx-auto overflow-hidden">
     <RouterView v-slot="{ Component, route }">
       <Transition
         name="fade"

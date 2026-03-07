@@ -1,5 +1,6 @@
 import { HORSE_NAMES } from '@/assets/horse-names'
 import { generateUniqueHexColor } from '@/utils/colors'
+import { randomNumber } from '@/utils/numbers'
 import { useStore } from 'vuex'
 import type { Horse } from '@/types/store/racing'
 import { shuffle } from '@/utils/shuffle'
@@ -12,6 +13,7 @@ export const useHorseList = () => {
       id: new Date().valueOf().toString(),
       name: horseName,
       color: generateUniqueHexColor(),
+      condition: randomNumber(30, 100),
     }))
     console.log(horseList)
     store.dispatch('racing/setHorseList', horseList)

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 bg-blue-500">
+  <header class="bg-header-background border border-black p-2">
    <h1 class="text-3xl font-bold text-white">
     Horse Racing
    </h1>
