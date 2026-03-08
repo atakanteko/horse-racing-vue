@@ -70,8 +70,9 @@ const getPositionPercentage = (position: number): number => {
               alt="Horse"
               class="w-10 h-10 shrink-0"
               :style="{
-                filter: `drop-shadow(0 0 4px ${lane.horse.color}) drop-shadow(0 0 8px ${lane.horse.color})`
+                filter: `drop-shadow(0 0 4px ${lane.horse.color}) drop-shadow(0 0 8px ${lane.horse.color})`,
               }"
+              data-testid="racing-lanes-horse-icon"
             />
           </div>
         </div>

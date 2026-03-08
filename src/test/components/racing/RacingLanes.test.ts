@@ -46,7 +46,13 @@ describe('RacingLanes', () => {
     })
     const lanes = wrapper.findAll('[data-testid="racing-lanes-lane"]')
     expect(lanes.length).toBe(1)
-    expect(lanes[0]?.text()).toContain('Andromeda')
+
+    const horseElements = wrapper.findAll('[data-testid="racing-lanes-horse"]')
+    expect(horseElements.length).toBe(1)
+
+    const horseIcon = horseElements[0]?.find('[data-testid="racing-lanes-horse-icon"]')
+    expect(horseIcon?.exists()).toBe(true)
+    expect(horseIcon?.attributes('alt')).toBe('Horse')
   })
   it('should calculate position percentage correctly', () => {
     const store = createMockRacingStore({
@@ -64,7 +70,7 @@ describe('RacingLanes', () => {
         plugins: [store],
       },
     })
-    const horseElement = wrapper.find('[data-testid="racing-lanes-horse-name"]')
+    const horseElement = wrapper.find('[data-testid="racing-lanes-horse"]')
     const style = horseElement.attributes('style')
     expect(style).toContain('left: 31.25%')
   })
