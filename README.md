@@ -1,48 +1,136 @@
-# horse-racing
+# 🐎 Horse Racing App
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue 3 + TypeScript + Tailwind CSS ile geliştirilmiş at yarışı simülasyon uygulaması.
 
-## Recommended IDE Setup
+## 🚀 Özellikler
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **At Yarışı Simülasyonu**: Rastgele atlar ve programlar oluşturma
+- **Gerçek Zamanlı Yarış**: Canlı yarış simülasyonu ve pozisyon takibi
+- **Sonuç Takibi**: Yarış sonuçlarını görüntüleme ve kazanan belirleme
+- **Responsive Tasarım**: Modern ve responsive kullanıcı arayüzü
+- **Test Coverage**: Unit testler (Vitest) ve E2E testler (Playwright)
 
-## Recommended Browser Setup
+## 🛠️ Teknolojiler
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- **Vue 3** - Composition API
+- **TypeScript** - Type safety
+- **Vuex** - State management
+- **Vue Router** - Routing
+- **Tailwind CSS v4** - Styling
+- **Vitest** - Unit testing
+- **Playwright** - E2E testing
+- **Vite** - Build tool
 
-## Type Support for `.vue` Imports in TS
+## 📁 Proje Yapısı
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+```
+src/
+├── assets/          # SVG ikonlar, CSS dosyaları
+├── components/       # Vue component'leri
+│   ├── layout/      # Header, Main, Footer
+│   └── racing/      # Racing-specific components
+├── composables/     # Composition API hooks
+├── stores/          # Vuex store modules
+├── types/           # TypeScript type definitions
+├── utils/           # Utility functions
+├── views/           # Page components
+└── test/            # Unit test files
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+e2e/                 # E2E test files (Playwright)
 ```
 
-### Compile and Hot-Reload for Development
+## 🎯 Ana Bileşenler
 
-```sh
+### Racing Components
+- **RacingHorseList**: At listesini gösterir
+- **RacingLanes**: Yarış pistini ve at pozisyonlarını gösterir
+- **RacingBoard**: Program ve sonuçları gösterir
+- **RacingProgramCard**: Program bilgilerini kart formatında gösterir
+
+### State Management
+- **Racing Module**: At listesi, programlar, aktif yarış ve sonuçları yönetir
+- **Actions**: Program oluşturma, yarış başlatma/durdurma
+- **Getters**: State'e erişim için computed properties
+
+### Race Simulation
+- **useRaceSimulation**: Yarış simülasyonu logic'i
+- **Sequential Racing**: Yarışlar sırayla tamamlanır
+- **Non-deterministic**: Rastgele hız ve condition bazlı kazanma
+
+## 🧪 Testler
+
+### Unit Tests (Vitest)
+```bash
+npm run test          # Tüm testleri çalıştır
+npm run test:watch    # Watch mode
+npm run test:coverage # Coverage raporu
+npm run test:ui       # UI modunda
+```
+
+### E2E Tests (Playwright)
+```bash
+npm run test:e2e           # Tüm e2e testleri
+npm run test:e2e:ui       # UI modunda
+npm run test:e2e:report   # Test raporunu göster
+```
+
+## 🏃‍♂️ Çalıştırma
+
+### Development
+```bash
+npm install
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+### Build
+```bash
 npm run build
 ```
+Build öncesi otomatik olarak:
+1. Unit testler çalışır
+2. E2E testler çalışır
+3. TypeScript kontrolü yapılır
+4. Build alınır
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+### Preview
+```bash
+npm run preview
 ```
+
+## 📝 Scripts
+
+- `npm run dev` - Development server
+- `npm run build` - Production build (testler dahil)
+- `npm run preview` - Build preview
+- `npm run test` - Unit testler
+- `npm run test:e2e` - E2E testler
+- `npm run type-check` - TypeScript kontrolü
+- `npm run lint` - Linting
+- `npm run format` - Code formatting
+
+## 🎨 Stil ve Tasarım
+
+- **Tailwind CSS v4** - CSS-first configuration
+- **Custom Colors**: Primary (#182337) ve tema renkleri
+- **Responsive Grid**: 12-column grid system
+- **Component-based**: Her bölüm ayrı component
+
+## 🔧 Yapılandırma
+
+### Tailwind CSS
+Renkler `src/assets/main.css` içinde `@theme` directive ile tanımlanmıştır.
+
+### Vuex Store
+Modüler yapı: `stores/modules/racing.ts` - Racing state management
+
+### Testing
+- **Vitest**: `vite.config.ts` içinde yapılandırılmış
+- **Playwright**: `playwright.config.ts` içinde yapılandırılmış
+- **Test Helpers**: `src/test/helpers/store.ts` - Store mock helper
+
+## 🎮 Kullanım
+
+1. **Program Oluştur**: "GENERATE PROGRAM" butonuna tıklayın
+2. **Yarışı Başlat**: "START" butonuna tıklayın
+3. **Yarışı İzle**: Atların pozisyonlarını gerçek zamanlı görün
+4. **Sonuçları Gör**: Yarış bitince sonuçlar otomatik kaydedilir
