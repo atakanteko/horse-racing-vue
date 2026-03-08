@@ -74,6 +74,13 @@ npm run test:e2e:ui       # UI modunda
 npm run test:e2e:report   # Test raporunu göster
 ```
 
+**Environment Variable Kullanımı:**
+- **Development** (varsayılan): `http://localhost:5173` - Dev server otomatik başlar
+- **Production/Deploy**: `PLAYWRIGHT_BASE_URL` environment variable'ı ile deploy URL'i belirtin
+  ```bash
+  PLAYWRIGHT_BASE_URL=https://your-app.app npm run test:e2e
+  ```
+
 ## 🏃‍♂️ Çalıştırma
 
 ### Development
@@ -128,6 +135,25 @@ Modüler yapı: `stores/modules/racing.ts` - Racing state management
 - **Playwright**: `playwright.config.ts` içinde yapılandırılmış
 - **Test Helpers**: `src/test/helpers/store.ts` - Store mock helper
 
+### Environment Variables
+
+#### E2E Test URL Yapılandırması
+Playwright testleri için base URL environment variable ile kontrol edilir:
+
+- **Development** (varsayılan): 
+  - `PLAYWRIGHT_BASE_URL` set edilmezse → `http://localhost:5173`
+  - Dev server otomatik başlatılır
+
+- **Production/Deploy**:
+  ```bash
+  # .env dosyası veya CI/CD environment variable
+  PLAYWRIGHT_BASE_URL=https://your-app.vercel.app
+  ```
+  
+  Deploy ortamında test çalıştırma:
+  ```bash
+  PLAYWRIGHT_BASE_URL=https://your-app.vercel.app npm run test:e2e
+  ```
 ## 🎮 Kullanım
 
 1. **Program Oluştur**: "GENERATE PROGRAM" butonuna tıklayın
