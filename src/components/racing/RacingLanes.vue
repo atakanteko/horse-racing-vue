@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 import type { ActiveRace } from '@/types/store/racing'
+import RunningHorseIcon from '@/assets/images/running-horse.svg?url'
 
 const store = useStore()
 const activeRace = computed<ActiveRace | null>(() => store.getters['racing/getActiveRace'])
@@ -60,11 +61,18 @@ const getPositionPercentage = (position: number): number => {
         </div>
         <div class="flex-1 relative h-full bg-gray-100">
           <div
-            class="absolute top-1/2 -translate-y-1/2 bg-blue-500 text-white px-3 py-1 rounded text-sm font-semibold whitespace-nowrap transition-all duration-75 ease-linear"
+            class="absolute top-1/2 -translate-y-1/2 flex items-center gap-2 transition-all duration-75 ease-linear"
             :style="{ left: `${getPositionPercentage(lane.position)}%` }"
-            data-testid="racing-lanes-horse-name"
+            data-testid="racing-lanes-horse"
           >
-            {{ lane.horse.name }}
+            <img
+              :src="RunningHorseIcon"
+              alt="Horse"
+              class="w-10 h-10 shrink-0"
+              :style="{
+                filter: `drop-shadow(0 0 4px ${lane.horse.color}) drop-shadow(0 0 8px ${lane.horse.color})`
+              }"
+            />
           </div>
         </div>
         <div class="bg-red-600 w-2 h-full shrink-0"></div>
