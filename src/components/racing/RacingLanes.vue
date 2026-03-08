@@ -35,7 +35,9 @@ const getPositionPercentage = (position: number): number => {
 <template>
   <div class="h-full w-full bg-gray-200 flex flex-col relative">
     <div v-if="!activeRace" class="flex items-center justify-center h-full text-gray-500">
-      <p>No active race. Generate a program and start racing!</p>
+      <p data-testid="racing-lanes-no-active-race-message">
+        No active race. Generate a program and start racing!
+      </p>
     </div>
     <div v-else class="h-full flex flex-col">
       <div
@@ -49,6 +51,7 @@ const getPositionPercentage = (position: number): number => {
         :key="`lane-${lane.lane}-${lane.horse.id}`"
         class="relative flex items-center border-b border-dashed border-gray-400"
         :style="{ height: `${100 / lanes.length}%` }"
+        data-testid="racing-lanes-lane"
       >
         <div
           class="bg-green-700 text-white w-12 h-full flex items-center justify-center shrink-0 font-bold"
@@ -59,6 +62,7 @@ const getPositionPercentage = (position: number): number => {
           <div
             class="absolute top-1/2 -translate-y-1/2 bg-blue-500 text-white px-3 py-1 rounded text-sm font-semibold whitespace-nowrap transition-all duration-75 ease-linear"
             :style="{ left: `${getPositionPercentage(lane.position)}%` }"
+            data-testid="racing-lanes-horse-name"
           >
             {{ lane.horse.name }}
           </div>
